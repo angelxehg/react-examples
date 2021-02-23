@@ -13,11 +13,14 @@ class Text extends Component {
 
   render() {
     // eslint-disable-next-line react/prop-types
-    const mapped = this.props.arrayOfNumbers.map(n => n * 2);
+    const { arrayOfNumbers, multiply, objectWithKey, title } = this.props;
+    // eslint-disable-next-line react/prop-types
+    const mapped = arrayOfNumbers.map(multiply);
     return <>
+      {title}
       <p>{mapped.join(', ')}</p>
-      {/* eslint-disable-next-line react/prop-types*/}
-      <p>{this.props.objectWithKey.key}</p>
+      {/* eslint-disable-next-line react/prop-types */}
+      <p>{objectWithKey.key}</p>
     </>;
   }
 }
@@ -31,9 +34,8 @@ function App() {
         <Text
           arrayOfNumbers={[1,2,3,4,5]}
           objectWithKey={{key: 'value'}}
-          isActivated={false}
-          number={1}
-          text="Texto"
+          multiply={(n) => n * 4}
+          title={<h1>Hola</h1>}
         />
       </header>
     </div>
