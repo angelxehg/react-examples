@@ -43,6 +43,7 @@ function App() {
   return (
     <div className="App">
       <Title text="Hola mundo" />
+      <span>Versión 0.1.1</span>
       <Contador inicial={5}/>
     </div>
   );
