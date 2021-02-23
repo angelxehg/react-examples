@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import PropTypes from "prop-types"
 import './App.css';
 
@@ -17,19 +17,23 @@ Title.defaultProps = {
   text: 'Título por defecto'
 }
 
-function Contador() {
+class Contador extends Component {
 
-  const [cuenta, setCuenta] = useState(1);
+  constructor() {
+    super();
+    this.state = {cuenta: 1};
+    setInterval(() => {
+      this.setState({cuenta: this.state.cuenta + 1});
+    }, 1000)
+  }
 
-  useEffect(() => {
-    document.title = `Clicks: ${cuenta}`;
-  });
+  render() {
+    return <span>Cuenta: {this.state.cuenta}</span>
+  }
+}
 
-  return (
-    <button onClick={() => setCuenta(cuenta + 1)}>
-      Clicks: {cuenta}
-    </button>
-  );
+Contador.propTypes = {
+  cuenta: PropTypes.number
 }
 
 function App() {
