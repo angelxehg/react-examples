@@ -1,13 +1,20 @@
 import logo from './logo.svg';
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
+
+class Hello extends Component {
+  render() {
+    // eslint-disable-next-line react/prop-types
+    return <p>{this.props.title}</p>;
+  }
+}
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Hola mundo, estoy usando React</p>
+        <Hello title="Hola mundo"/>
       </header>
     </div>
   );
