@@ -17,10 +17,22 @@ Title.defaultProps = {
   text: 'Título por defecto'
 }
 
+class Contador extends Component {
+  constructor() {
+    super();
+    this.state = {cuenta: 1}
+  }
+
+  render() {
+    return <span>Cuenta: {this.state.cuenta}</span>;
+  }
+}
+
 function App() {
   return (
     <div className="App">
       <Title text="Hola mundo"/>
+      <Contador/>
     </div>
   );
 }
