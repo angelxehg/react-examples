@@ -19,9 +19,9 @@ Title.defaultProps = {
 
 class Contador extends Component {
 
-  constructor() {
-    super();
-    this.state = {cuenta: 1};
+  constructor(props) {
+    super(props);
+    this.state = {cuenta: this.props.inicial};
     setInterval(() => {
       this.setState({cuenta: this.state.cuenta + 1});
     }, 1000)
@@ -33,14 +33,14 @@ class Contador extends Component {
 }
 
 Contador.propTypes = {
-  cuenta: PropTypes.number
+  inicial: PropTypes.number
 }
 
 function App() {
   return (
     <div className="App">
       <Title text="Hola mundo" />
-      <Contador />
+      <Contador inicial={5}/>
     </div>
   );
 }
