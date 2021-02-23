@@ -22,9 +22,12 @@ class Contador extends Component {
   constructor(props) {
     super(props);
     this.state = {cuenta: this.props.inicial};
+  }
+
+  componentDidMount() {
     setInterval(() => {
       this.setState({cuenta: this.state.cuenta + 1});
-    }, 1000)
+    }, 1000);
   }
 
   render() {
