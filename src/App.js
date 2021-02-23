@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import PropTypes from "prop-types"
 import './App.css';
 
@@ -20,6 +20,10 @@ Title.defaultProps = {
 function Contador() {
 
   const [cuenta, setCuenta] = useState(1);
+
+  useEffect(() => {
+    document.title = `Clicks: ${cuenta}`;
+  });
 
   return (
     <button onClick={() => setCuenta(cuenta + 1)}>
