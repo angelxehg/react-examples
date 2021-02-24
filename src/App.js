@@ -2,6 +2,7 @@ import React from 'react';
 import Conditional from './sections/conditional';
 
 import './App.css';
+import Lists from './sections/lists';
 
 // class Title extends Component {
 //   render() {
@@ -43,6 +44,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <Lists/>
       <Conditional/>
     </div>
   );
