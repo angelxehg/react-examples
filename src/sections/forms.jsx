@@ -2,19 +2,13 @@ import React, { useState } from 'react';
 
 const Formularios = () => {
 
-  const [inputName, setInputName] = useState();
-  const [inputTwitter, setInputTwitter] = useState();
-  
+  const [inputName, changeName] = useState('');
+  const [inputTwitter, changeTwitter] = useState('@');
+  const [inputTerms, changeTerms] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
-    const name = inputName.value;
-    const twitter = inputTwitter.value;
-    console.log({name, twitter});
-  }
-
-  const handleChange = (e) => {
-    console.log(e.target.checked);
+    console.log({inputName, inputTwitter, inputTerms});
   }
 
   return <>
@@ -22,15 +16,31 @@ const Formularios = () => {
     <form onSubmit={handleSubmit}>
       <p>
         <label htmlFor="name">Nombre:</label>
-        <input id="name" type="text" placeholder="Introduce tu nombre" ref={setInputName}/>
+        <input
+          id="name"
+          type="text"
+          placeholder="Introduce tu nombre"
+          value={inputName}
+          onChange={e => changeName(e.target.value)}
+        />
       </p>
       <p>
         <label htmlFor="twitter">Twitter:</label>
-        <input id="twitter" type="text" placeholder="Introduce tu twitter" ref={setInputTwitter}/>
+        <input
+          id="twitter"
+          type="text"
+          placeholder="Introduce tu twitter"
+          value={inputTwitter}
+          onChange={e => changeTwitter(e.target.value)}
+        />
       </p>
       <p>
         <label>
-          <input type="checkbox" onChange={handleChange}/>Aceptar terminos
+          <input
+            type="checkbox"
+            onChange={e => changeTerms(e.target.checked)}
+            value={inputTerms}
+          />Aceptar terminos
         </label>
       </p>
       <button>Enviar</button>
