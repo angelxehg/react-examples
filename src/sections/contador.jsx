@@ -22,10 +22,10 @@ class Contador extends Component {
   }
 
   render() {
-    return <>
+    return <div className="mt-3">
       <h1>Contador</h1>
       <span>Cuenta: {this.state.cuenta}</span>
-    </>
+    </div>
   }
 }
 

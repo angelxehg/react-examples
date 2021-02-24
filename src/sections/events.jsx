@@ -15,7 +15,7 @@ const Eventos = () => {
     alert('Me diste clic')
   }
 
-  return <>
+  return <div className="mt-3">
     <h1>Eventos</h1>
     <button className="btn btn-primary" onClick={handleClick}>
       Dame clic
@@ -23,7 +23,7 @@ const Eventos = () => {
     <div onMouseMove={handleMouseMove} style={{border: '1px solid #000', marginTop: 10, padding: 10}}>
       <p>Posición: {mouseX}, {mouseY}</p>
     </div>
-  </>;
+  </div>;
 }
 
 export default Eventos;

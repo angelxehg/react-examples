@@ -15,7 +15,7 @@ Auto.propTypes = {
 }
 
 const ListaAutos = () => {
-  return <>
+  return <div className="mt-3">
     <h1>Lista de autos</h1>
     <ul>
       {autos.map(a => <Auto
@@ -23,7 +23,7 @@ const ListaAutos = () => {
         car={a}
       />)}
     </ul>
-  </>
+  </div>
 };
 
 export default ListaAutos;

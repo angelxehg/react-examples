@@ -11,7 +11,7 @@ const Formularios = () => {
     console.log({ inputName, inputTwitter, inputTerms });
   }
 
-  return <>
+  return <div className="mt-3">
     <h1>Formularios</h1>
     <form onSubmit={handleSubmit}>
       <div className="form-group">
@@ -29,7 +29,7 @@ const Formularios = () => {
       </div>
       <button type="submit" className="btn btn-primary">Enviar</button>
     </form>
-  </>;
+  </div>;
 }
 
 export default Formularios

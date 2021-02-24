@@ -10,7 +10,7 @@ import Formularios from './sections/forms';
 
 function App() {
   return (
-    <div className="container-sm pt-5 pb-5">
+    <div className="container-sm pt-2 pb-2">
       <Formularios/>
       <Eventos/>
       <ListaAutos/>
