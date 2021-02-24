@@ -3,6 +3,7 @@ import Conditional from './sections/conditional';
 
 import './App.css';
 import Lists from './sections/lists';
+import ListaAutos from './sections/cars';
 
 // class Title extends Component {
 //   render() {
@@ -44,6 +45,7 @@ import Lists from './sections/lists';
 function App() {
   return (
     <div className="App">
+      <ListaAutos/>
       <Lists/>
       <Conditional/>
     </div>
