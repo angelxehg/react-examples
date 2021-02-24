@@ -44,7 +44,7 @@ import ListaAutos from './sections/cars';
 
 function App() {
   return (
-    <div className="App">
+    <div className="container-sm pt-5 pb-5">
       <ListaAutos/>
       <Lists/>
       <Conditional/>
