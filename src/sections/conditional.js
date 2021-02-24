@@ -1,14 +1,22 @@
 import React, { useState } from "react";
 
-const ComponenteA = () => <p>Componente A</p>
-const ComponenteB = () => <p>Componente B</p>
+const LoginButton = () => {
+  return <button>Iniciar sesión</button>;
+}
+
+const LogoutButton = () => {
+  return <>
+    <p>Bienvenido, usuario</p>
+    <button>Cerrar sesión</button>
+  </>;
+}
 
 const Conditional = () => {
-  const [mostrarA] = useState(true);
+  const [isLoggedIn] = useState(false);
 
   return (<>
     <h1>Condicional Rendering</h1>
-    {mostrarA ? <ComponenteA/> : <ComponenteB/>}
+    {isLoggedIn ? <LogoutButton/> : <LoginButton/> }
   </>);
 }
 
