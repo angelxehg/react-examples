@@ -12,7 +12,7 @@ const Formularios = () => {
   }
 
   return <div className="mt-3">
-    <h1>Formularios</h1>
+    <h2>Formularios</h2>
     <form onSubmit={handleSubmit}>
       <div className="form-group">
         <label htmlFor="inputName">Nombre</label>

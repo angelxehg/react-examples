@@ -16,7 +16,7 @@ Auto.propTypes = {
 
 const ListaAutos = () => {
   return <div className="mt-3">
-    <h1>Lista de autos</h1>
+    <h2>Lista de autos</h2>
     <ul>
       {autos.map(a => <Auto
         key={a.id}

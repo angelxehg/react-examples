@@ -23,7 +23,7 @@ class Contador extends Component {
 
   render() {
     return <div className="mt-3">
-      <h1>Contador</h1>
+      <h2>Contador</h2>
       <span>Cuenta: {this.state.cuenta}</span>
     </div>
   }

@@ -15,7 +15,7 @@ const Conditional = () => {
   const [isLoggedIn] = useState(false);
 
   return (<div className="mt-3">
-    <h1>Condicional Rendering</h1>
+    <h2>Condicional Rendering</h2>
     {isLoggedIn ? <LogoutButton/> : <LoginButton/> }
   </div>);
 }

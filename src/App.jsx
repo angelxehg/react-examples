@@ -10,7 +10,8 @@ import Formularios from './sections/forms';
 
 function App() {
   return (
-    <div className="container-sm pt-2 pb-2">
+    <div className="container-sm pt-5 pb-5">
+      <h1>Udemy Curso React <span className="badge bg-secondary">v0.1.3</span></h1>
       <Formularios/>
       <Eventos/>
       <ListaAutos/>
