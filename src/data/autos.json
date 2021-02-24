@@ -1,0 +1,17 @@
+[
+  {
+    "id": "car-1",
+    "name": "Auto 1",
+    "brand": "Empresa 1"
+  },
+  {
+    "id": "car-2",
+    "name": "Auto 2",
+    "brand": "Empresa 2"
+  },
+  {
+    "id": "car-3",
+    "name": "Auto 3",
+    "brand": "Empresa 3"
+  }
+]
