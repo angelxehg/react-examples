@@ -8,42 +8,26 @@ const Formularios = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({inputName, inputTwitter, inputTerms});
+    console.log({ inputName, inputTwitter, inputTerms });
   }
 
   return <>
     <h1>Formularios</h1>
     <form onSubmit={handleSubmit}>
-      <p>
-        <label htmlFor="name">Nombre:</label>
-        <input
-          id="name"
-          type="text"
-          placeholder="Introduce tu nombre"
-          value={inputName}
-          onChange={e => changeName(e.target.value)}
-        />
-      </p>
-      <p>
-        <label htmlFor="twitter">Twitter:</label>
-        <input
-          id="twitter"
-          type="text"
-          placeholder="Introduce tu twitter"
-          value={inputTwitter}
-          onChange={e => changeTwitter(e.target.value)}
-        />
-      </p>
-      <p>
-        <label>
-          <input
-            type="checkbox"
-            onChange={e => changeTerms(e.target.checked)}
-            value={inputTerms}
-          />Aceptar terminos
-        </label>
-      </p>
-      <button>Enviar</button>
+      <div className="form-group">
+        <label htmlFor="inputName">Nombre</label>
+        <input type="text" className="form-control" id="inputName" placeholder="Introduce tu nombre" value={inputName} onChange={e => changeName(e.target.value)} />
+      </div>
+      <div className="form-group">
+        <label htmlFor="inputTwitter">Twitter</label>
+        <input type="text" className="form-control" id="inputTwitter" placeholder="Introduce tu twitter" value={inputTwitter} onChange={e => changeTwitter(e.target.value)} />
+      </div>
+      <div className="form-check">
+        <input type="checkbox" className="form-check-input" id="inputTerms" onChange={e => changeTerms(e.target.checked)}
+          value={inputTerms} />
+        <label className="form-check-label" htmlFor="inputTerms">Aceptar terminos</label>
+      </div>
+      <button type="submit" className="btn btn-primary">Enviar</button>
     </form>
   </>;
 }
