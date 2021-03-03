@@ -27,10 +27,10 @@ const Article = ({ title, author, date, children }) => {
 }
 
 Article.propTypes = {
-  title: PropTypes.string,
-  author: PropTypes.string,
-  date: PropTypes.string,
-  children: PropTypes.node
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 const Components = () => {
