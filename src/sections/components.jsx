@@ -13,11 +13,43 @@ Box.propTypes = {
   children: PropTypes.node
 }
 
+const Article = ({ title, author, date, children }) => {
+  return (
+    <section className="mt-3">
+      <h3>{title}</h3>
+      <p><em>Escrito por {author}</em></p>
+      <Box>{date}</Box>
+      <article>
+        {children}
+      </article>
+    </section>
+  )
+}
+
+Article.propTypes = {
+  title: PropTypes.string,
+  author: PropTypes.string,
+  date: PropTypes.string,
+  children: PropTypes.node
+}
+
 const Components = () => {
   return <div className="mt-5">
     <h2>Componentes</h2>
-    <Box>Este es un componente</Box>
-    <Box>Este es otro componente</Box>
+    <Article
+      title="Nuevo artículo"
+      author="Angel Hurtado"
+      date={new Date().toLocaleString()}
+    >
+      <p>Este es el contenido de mi articulo</p>
+    </Article>
+    <Article
+      title="Anterior artículo"
+      author="Angel Hurtado"
+      date={new Date().toLocaleString()}
+    >
+      <p>Este es el contenido de otro articulo</p>
+    </Article>
   </div>
 };
 
