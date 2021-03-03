@@ -1,18 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
-const PriceDisplay = ({ code, rate, symbol }) => (
-  <div className="mt-2">
-    <p><b>{code}</b>: {symbol} {rate}</p>
-  </div>
-)
-
-PriceDisplay.propTypes = {
-  code: PropTypes.string,
-  rate: PropTypes.string,
-  symbol: PropTypes.string
-}
-
 class FetchExample extends Component {
 
   state = { bpi: {} }
@@ -27,14 +13,12 @@ class FetchExample extends Component {
   }
 
   render() {
-    const {EUR, GBP, USD} = this.state.bpi;
+    const { bpi } = this.state;
     return (
       <div className="mt-5">
-        <h2>Ejemplo de Fetch</h2>
-        <p>Precios del Bitcoin</p>
-        {EUR && <PriceDisplay code={EUR.code} rate={EUR.rate} symbol={EUR.symbol}/>}
-        {GBP && <PriceDisplay code={GBP.code} rate={GBP.rate} symbol={GBP.symbol}/>}
-        {USD && <PriceDisplay code={USD.code} rate={USD.rate} symbol={USD.symbol}/>}
+        <h2>Precios del Bitcoin</h2>
+        <p>Ejemplo de Fetch</p>
+        {Object.keys(bpi).map(key => <p key={key} >1 BTC = {bpi[key].rate} {key}</p>)}
       </div>
     )
   }
