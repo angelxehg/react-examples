@@ -4,6 +4,7 @@ class LifeCycles extends Component {
 
   constructor(props) {
     super(props);
+    console.log('Constructor');
     this.state = { message: 'Mensaje inicial' };
   }
 
@@ -12,6 +13,7 @@ class LifeCycles extends Component {
   }
 
   render() {
+    console.log('Render');
     return (
       <div className="mt-5">
         <h2>Ciclos de vida</h2>
