@@ -11,7 +11,7 @@ const Formularios = () => {
     console.log({ inputName, inputTwitter, inputTerms });
   }
 
-  return <div className="mt-3">
+  return <div className="mt-5">
     <h2>Formularios</h2>
     <form onSubmit={handleSubmit}>
       <div className="form-group">

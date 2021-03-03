@@ -5,7 +5,7 @@ const LoginButton = () => {
 }
 
 const LogoutButton = () => {
-  return <div className="mt-3">
+  return <div className="mt-5">
     <p>Bienvenido, usuario</p>
     <button>Cerrar sesión</button>
   </div>;
@@ -14,7 +14,7 @@ const LogoutButton = () => {
 const Conditional = () => {
   const [isLoggedIn] = useState(false);
 
-  return (<div className="mt-3">
+  return (<div className="mt-5">
     <h2>Condicional Rendering</h2>
     {isLoggedIn ? <LogoutButton/> : <LoginButton/> }
   </div>);
