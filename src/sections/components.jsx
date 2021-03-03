@@ -14,7 +14,7 @@ Box.propTypes = {
 }
 
 const Components = () => {
-  return <div className="mt-3">
+  return <div className="mt-5">
     <h2>Componentes</h2>
     <Box>Este es un componente</Box>
     <Box>Este es otro componente</Box>

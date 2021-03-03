@@ -15,7 +15,7 @@ const Eventos = () => {
     alert('Me diste clic')
   }
 
-  return <div className="mt-3">
+  return <div className="mt-5">
     <h2>Eventos</h2>
     <button className="btn btn-primary" onClick={handleClick}>
       Dame clic
