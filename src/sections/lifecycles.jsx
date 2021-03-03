@@ -11,11 +11,18 @@ class LifeCycles extends Component {
   componentDidMount() {
     console.log('Mount');
     this.setState({ message: 'Mensaje montado' });
-    document.addEventListener('scroll', () => {
-      const sY = window.scrollY;
-      const sX = window.scrollX;
-      this.setState({sY, sX});
-    })
+    document.addEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll = () => {
+    const sY = window.scrollY;
+    const sX = window.scrollX;
+    this.setState({ sY, sX });
+  }
+
+  componentWillUnmount() {
+    console.log('Unmont');
+    document.removeEventListener('scroll', this.handleScroll);
   }
 
   handleClick = () => {
