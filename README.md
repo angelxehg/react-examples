@@ -17,3 +17,11 @@ Utilice estos comandos para clonar e instalar el sitio:
 Utilice estos comandos para mantener la calidad del código
 
 - Code linting: `npm run lint`
+
+## Despliegue en Netlify
+
+Use la siguiente configuración para desplegar en Netlify
+
+- Build command: `react-scripts build`
+
+- Publish directory: `build/`
