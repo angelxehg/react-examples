@@ -10,6 +10,7 @@ import Formularios from './sections/forms';
 import Components from './sections/components';
 import LifeCycles from './sections/lifecycles';
 import FetchExample from './sections/fetch';
+import LifecyclesUpdate from './sections/lifecyclesupdate';
 
 function App() {
   const [showLifeCycles, setShowLifeCycles] = useState(true);
@@ -19,6 +20,7 @@ function App() {
     <div className="container-sm pt-5 pb-5">
       <h1>Ejemplos con React <span className="badge bg-secondary">v0.2.0</span></h1>
       <p>Ejercicios de React del curso <b>Aprender React JS</b> de <a href="https://twitter.com/midudev">@midudev</a> </p>
+      <LifecyclesUpdate/>
       <FetchExample/>
       {showLifeCycles && <LifeCycles />}
       {showLifeCycles && <button className="btn btn-danger" onClick={() => hideLifeCycles()}>Eliminar</button>}

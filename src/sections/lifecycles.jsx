@@ -30,7 +30,6 @@ class LifeCycles extends Component {
   }
 
   render() {
-    console.log('Render');
     return (
       <div className="mt-5">
         <h2>Ciclos de vida</h2>
