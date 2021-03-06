@@ -18,17 +18,17 @@ import './App.css';
 function App() {
 
   const sections = [
-    { title: 'Bitcoin', path: "/bitcoin" },
-    { title: 'Lifecycles (update)', path: "/lifecyclesupdate" },
-    { title: 'Fetch', path: "/fetch" },
-    { title: 'Lifecycles', path: "/lifecycles" },
-    { title: 'Componentes', path: "/components" },
-    { title: 'Formularios', path: "/formularios" },
-    { title: 'Eventos', path: "/eventos" },
-    { title: 'Autos', path: "/autos" },
-    { title: 'Listas', path: "/listas" },
-    { title: 'Condicionales', path: "/condicional" },
-    { title: 'Contador', path: "/contador" },
+    { title: 'Bitcoin', path: "/bitcoin", component: <BitcoinPage /> },
+    { title: 'Lifecycles (update)', path: "/lifecyclesupdate", component: <LifecyclesUpdate /> },
+    { title: 'Fetch', path: "/fetch", component: <FetchExample /> },
+    { title: 'Lifecycles', path: "/lifecycles", component: <LifeCycles /> },
+    { title: 'Componentes', path: "/components", component: <Components /> },
+    { title: 'Formularios', path: "/formularios", component: <Formularios /> },
+    { title: 'Eventos', path: "/eventos", component: <Eventos /> },
+    { title: 'Autos', path: "/autos", component: <ListaAutos /> },
+    { title: 'Listas', path: "/listas", component: <Lists /> },
+    { title: 'Condicionales', path: "/condicional", component: <Conditional /> },
+    { title: 'Contador', path: "/contador", component: <Contador /> },
   ]
 
   return (
@@ -48,39 +48,9 @@ function App() {
             </ul>
           </nav>
           <Switch>
-            <Route path="/bitcoin">
-              <BitcoinPage />
-            </Route>
-            <Route path="/lifecyclesupdate">
-              <LifecyclesUpdate />
-            </Route>
-            <Route path="/fetch">
-              <FetchExample />
-            </Route>
-            <Route path="/lifecycles">
-              <LifeCycles />
-            </Route>
-            <Route path="/components">
-              <Components />
-            </Route>
-            <Route path="/formularios">
-              <Formularios />
-            </Route>
-            <Route path="/eventos">
-              <Eventos />
-            </Route>
-            <Route path="/autos">
-              <ListaAutos />
-            </Route>
-            <Route path="/listas">
-              <Lists />
-            </Route>
-            <Route path="/condicional">
-              <Conditional />
-            </Route>
-            <Route path="/contador">
-              <Contador />
-            </Route>
+            {sections.map(({ component, path }) => <Route key={path} path={path} >
+              {component}
+            </Route>)}
             <Route path="/">
               <h2>Hola mundo</h2>
             </Route>
