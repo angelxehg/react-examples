@@ -29,21 +29,22 @@ TableBody.propTypes = {
   children: PropTypes.node
 }
 
-const CurrencyRow = ({ currency, value }) => (
+const CurrencyRow = ({ currency, prefix, value }) => (
   <tr>
     <th scope="row">{currency}</th>
-    <td>{value}</td>
+    <td dangerouslySetInnerHTML={{__html: prefix + ' ' + value}}></td>
   </tr>
 )
 
 CurrencyRow.propTypes = {
   currency: PropTypes.string,
+  prefix: PropTypes.string,
   value: PropTypes.number
 }
 
 class BitcoinPage extends Component {
 
-  state = { bpi: {} }
+  state = { bpis: [] }
 
   componentDidMount() {
     this.fetchPrice();
@@ -52,11 +53,18 @@ class BitcoinPage extends Component {
   fetchPrice = async () => {
     const res = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
     const data = await res.json();
-    this.setState({ bpi: data.bpi });
+    const bpis = Object.keys(data.bpi).map(key => {
+      return {
+        currency: key,
+        prefix: data.bpi[key].symbol,
+        value: data.bpi[key].rate_float
+      }
+    })
+    this.setState({ bpis });
   }
 
   render() {
-    const { bpi } = this.state;
+    const { bpis } = this.state;
     return (
       <div className="mt-5">
         <h2>BTC (Container-Content)</h2>
@@ -64,7 +72,12 @@ class BitcoinPage extends Component {
         <Table>
           <TableHeader headers={['Moneda', 'Precio']} />
           <TableBody>
-            {Object.keys(bpi).map(key => <CurrencyRow key={key} currency={key} value={bpi[key].rate_float} />)}
+            {bpis.map(({ prefix, currency, value }) => <CurrencyRow
+              key={currency}
+              currency={currency}
+              prefix={prefix}
+              value={value}
+            />)}
           </TableBody>
         </Table>
       </div>
