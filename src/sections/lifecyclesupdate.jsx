@@ -9,14 +9,14 @@ const animalImages = {
 
 class AnimalImage extends Component {
 
-  state = { src: animalImages[this.props.animal]}
+  state = { src: animalImages[this.props.animal] }
 
   render() {
     console.log('Render AnimalImage')
     return (
       <div>
         <p>Selected: <b>{this.props.animal}</b></p>
-        <img src={this.state.src} alt={this.props.animal} width="150px"/>
+        <img src={animalImages[this.props.animal]} alt={this.props.animal} width="150px" />
       </div>
     )
   }
@@ -31,11 +31,25 @@ AnimalImage.defaultProps = {
 }
 
 class LifecyclesUpdate extends Component {
+
+  state = { animal: 'cat' }
+
   render() {
     return (
       <div className="mt-5">
         <h2>Ciclos de vida (Actualización)</h2>
-        <AnimalImage/>
+        <div className="btn-group" role="group" aria-label="Basic example">
+          <button type="button" className="btn btn-secondary" onClick={() => this.setState({animal: 'cat'})}>
+            Cat
+          </button>
+          <button type="button" className="btn btn-secondary" onClick={() => this.setState({animal: 'dolphin'})}>
+            Dolphin
+          </button>
+          <button type="button" className="btn btn-secondary" onClick={() => this.setState({animal: 'panda'})}>
+            Panda
+          </button>
+        </div>
+        <AnimalImage animal={this.state.animal} />
       </div>
     )
   }
