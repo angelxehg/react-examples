@@ -1,38 +1,26 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-const Table = ({ children }) => (
+const BTCTable = ({ children }) => (
   <table className="table table-sm">
-    {children}
+    <thead>
+      <tr>
+        <th scope="col">Moneda</th>
+        <th scope="col">Precio</th>
+      </tr>
+    </thead>
+    <tbody>{children}</tbody>
   </table>
 )
 
-Table.propTypes = {
-  children: PropTypes.node
-}
-
-const TableHeader = ({ headers }) => (
-  <thead>
-    <tr>
-      {headers.map(header => <th key={header} scope="col">{header}</th>)}
-    </tr>
-  </thead>
-)
-
-TableHeader.propTypes = {
-  headers: PropTypes.arrayOf(PropTypes.string)
-}
-
-const TableBody = ({ children }) => <tbody>{children}</tbody>
-
-TableBody.propTypes = {
+BTCTable.propTypes = {
   children: PropTypes.node
 }
 
 const CurrencyRow = ({ currency, prefix, value }) => (
   <tr>
     <th scope="row">{currency}</th>
-    <td dangerouslySetInnerHTML={{__html: prefix + ' ' + value}}></td>
+    <td dangerouslySetInnerHTML={{ __html: prefix + ' ' + value }}></td>
   </tr>
 )
 
@@ -69,17 +57,14 @@ class BitcoinPage extends Component {
       <div className="mt-5">
         <h2>BTC (Container-Content)</h2>
         <p>1 BTC equivale a...</p>
-        <Table>
-          <TableHeader headers={['Moneda', 'Precio']} />
-          <TableBody>
-            {bpis.map(({ prefix, currency, value }) => <CurrencyRow
-              key={currency}
-              currency={currency}
-              prefix={prefix}
-              value={value}
-            />)}
-          </TableBody>
-        </Table>
+        <BTCTable>
+          {bpis.map(({ prefix, currency, value }) => <CurrencyRow
+            key={currency}
+            currency={currency}
+            prefix={prefix}
+            value={value}
+          />)}
+        </BTCTable>
       </div>
     )
   }
