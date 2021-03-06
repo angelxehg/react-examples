@@ -6,6 +6,7 @@ const animalImages = {
   dolphin: 'https://images.unsplash.com/photo-1547382442-d17c21625a44?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9scGhpbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
   panda: 'https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80'
 }
+const animals = Object.keys(animalImages)
 
 class AnimalImage extends Component {
 
@@ -25,21 +26,13 @@ class AnimalImage extends Component {
     return (
       <div>
         <div className="btn-group" role="group" aria-label="Basic example">
-          <button type="button" className="btn btn-secondary"
-            onClick={() => this.changeImage('cat')}
-          >
-            Cat
-          </button>
-          <button type="button" className="btn btn-secondary"
-            onClick={() => this.changeImage('dolphin')}
-          >
-            Dolphin
-          </button>
-          <button type="button" className="btn btn-secondary"
-            onClick={() => this.changeImage('panda')}
-          >
-            Panda
-          </button>
+          {animals.map(key => {
+            return (
+              <button key={key} disabled={key === animal} type="button" className="btn btn-secondary" onClick={() => this.changeImage(key)}>
+                {key.toLocaleUpperCase()}
+              </button>
+            )
+          })}
         </div>
         <p>Selected: <b>{animal}</b></p>
         <img src={animalImages[animal]} alt={animal} width="150px" />
@@ -49,7 +42,7 @@ class AnimalImage extends Component {
 }
 
 AnimalImage.propTypes = {
-  defaultAnimal: PropTypes.oneOf(['cat', 'dolphin', 'panda'])
+  defaultAnimal: PropTypes.oneOf(animals)
 }
 
 AnimalImage.defaultProps = {
