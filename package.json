@@ -1,6 +1,6 @@
 {
-  "name": "udemy-curso-react",
-  "version": "0.1.4",
+  "name": "react-examples",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@popperjs/core": "^2.8.3",
