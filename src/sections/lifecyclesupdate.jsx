@@ -13,11 +13,21 @@ class AnimalImage extends Component {
   state = { animal: this.props.defaultAnimal }
 
   changeImage(newAnimal) {
-    if (this.state.animal === newAnimal) {
-      // Si no ha cambiado el estado, no hacer nada. Asi no se llama a Render
-      return;
-    }
+    // Si no ha cambiado el estado, no hacer nada. Asi no se llama a Render
+    // if (this.state.animal === newAnimal) {
+    //   return;
+    // }
     this.setState({ animal: newAnimal });
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    // Este método sólo existe como optimización de rendimiento.
+    // No confíes en él para “prevenir” un renderizado, ya que esto puede conducir a errores.
+    console.log({nextProps}, {nextState})
+    if (this.state.animal === nextState.animal) {
+      return false;
+    }
+    return true;
   }
 
   render() {
@@ -28,7 +38,7 @@ class AnimalImage extends Component {
         <div className="btn-group" role="group" aria-label="Basic example">
           {animals.map(key => {
             return (
-              <button key={key} disabled={key === animal} type="button" className="btn btn-secondary" onClick={() => this.changeImage(key)}>
+              <button key={key} type="button" className="btn btn-secondary" onClick={() => this.changeImage(key)}>
                 {key.toLocaleUpperCase()}
               </button>
             )
