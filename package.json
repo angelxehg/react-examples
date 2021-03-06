@@ -1,19 +1,22 @@
 {
   "name": "react-examples",
+  "description": "Ejemplos de React",
   "version": "0.2.0",
-  "private": true,
-  "dependencies": {
-    "@popperjs/core": "^2.8.3",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.7.3",
-    "bootstrap": "^5.0.0-beta2",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.0"
+  "homepage": "https://angelxehg.com/",
+  "author": {
+    "name": "Angel Hurtado",
+    "email": "contact@angelxehg.com",
+    "url": "https://angelxehg.com/"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angelxehg/react-examples.git"
+  },
+  "license": "MIT",
+  "private": true,
+  "keywords": [
+    "react"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -38,6 +41,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.8.3",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.7.3",
+    "bootstrap": "^5.0.0-beta2",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
