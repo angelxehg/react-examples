@@ -9,47 +9,60 @@ const animalImages = {
 
 class AnimalImage extends Component {
 
-  state = { src: animalImages[this.props.animal] }
+  state = { animal: this.props.defaultAnimal }
+
+  changeImage(newAnimal) {
+    if (this.state.animal === newAnimal) {
+      // Si no ha cambiado el estado, no hacer nada. Asi no se llama a Render
+      return;
+    }
+    this.setState({ animal: newAnimal });
+  }
 
   render() {
     console.log('Render AnimalImage')
+    const { animal } = this.state;
     return (
       <div>
-        <p>Selected: <b>{this.props.animal}</b></p>
-        <img src={animalImages[this.props.animal]} alt={this.props.animal} width="150px" />
+        <div className="btn-group" role="group" aria-label="Basic example">
+          <button type="button" className="btn btn-secondary"
+            onClick={() => this.changeImage('cat')}
+          >
+            Cat
+          </button>
+          <button type="button" className="btn btn-secondary"
+            onClick={() => this.changeImage('dolphin')}
+          >
+            Dolphin
+          </button>
+          <button type="button" className="btn btn-secondary"
+            onClick={() => this.changeImage('panda')}
+          >
+            Panda
+          </button>
+        </div>
+        <p>Selected: <b>{animal}</b></p>
+        <img src={animalImages[animal]} alt={animal} width="150px" />
       </div>
     )
   }
 }
 
 AnimalImage.propTypes = {
-  animal: PropTypes.oneOf(['cat', 'dolphin', 'panda'])
+  defaultAnimal: PropTypes.oneOf(['cat', 'dolphin', 'panda'])
 }
 
 AnimalImage.defaultProps = {
-  animal: 'cat'
+  defaultAnimal: 'cat'
 }
 
 class LifecyclesUpdate extends Component {
-
-  state = { animal: 'cat' }
 
   render() {
     return (
       <div className="mt-5">
         <h2>Ciclos de vida (Actualización)</h2>
-        <div className="btn-group" role="group" aria-label="Basic example">
-          <button type="button" className="btn btn-secondary" onClick={() => this.setState({animal: 'cat'})}>
-            Cat
-          </button>
-          <button type="button" className="btn btn-secondary" onClick={() => this.setState({animal: 'dolphin'})}>
-            Dolphin
-          </button>
-          <button type="button" className="btn btn-secondary" onClick={() => this.setState({animal: 'panda'})}>
-            Panda
-          </button>
-        </div>
-        <AnimalImage animal={this.state.animal} />
+        <AnimalImage defaultAnimal='cat' />
       </div>
     )
   }
