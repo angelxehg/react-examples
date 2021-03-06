@@ -14,9 +14,15 @@ class AnimalImage extends Component {
 
   changeImage(newAnimal) {
     // Si no ha cambiado el estado, no hacer nada. Asi no se llama a Render
-    // if (this.state.animal === newAnimal) {
-    //   return;
-    // }
+    if (this.state.animal === newAnimal) {
+      return;
+    }
+    const img = document.querySelector('#animalImage');
+    img.animate([
+      { filter: 'blur(0px)' },
+      { filter: 'blur(2px)' },
+      { filter: 'blur(0px)' }
+    ], { duration: 500, easing: 'ease'})
     this.setState({ animal: newAnimal });
   }
 
@@ -24,9 +30,9 @@ class AnimalImage extends Component {
     // Este método sólo existe como optimización de rendimiento.
     // No confíes en él para “prevenir” un renderizado, ya que esto puede conducir a errores.
     console.log({nextProps}, {nextState})
-    if (this.state.animal === nextState.animal) {
-      return false;
-    }
+    // if (this.state.animal === nextState.animal) {
+    //   return false;
+    // }
     return true;
   }
 
@@ -45,7 +51,7 @@ class AnimalImage extends Component {
           })}
         </div>
         <p>Selected: <b>{animal}</b></p>
-        <img src={animalImages[animal]} alt={animal} width="150px" />
+        <img id="animalImage" src={animalImages[animal]} alt={animal} width="150px"/>
       </div>
     )
   }
