@@ -1,13 +1,6 @@
-import React, { useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import Conditional from './sections/conditional';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import './App.css';
 import Lists from './sections/lists';
 import ListaAutos from './sections/cars';
 import Eventos from './sections/events';
@@ -18,11 +11,26 @@ import LifeCycles from './sections/lifecycles';
 import FetchExample from './sections/fetch';
 import LifecyclesUpdate from './sections/lifecyclesupdate';
 import BitcoinPage from './sections/bitcoin';
+import Conditional from './sections/conditional'
+
+import './App.css';
 
 function App() {
-  const [showLifeCycles, setShowLifeCycles] = useState(true);
 
-  const hideLifeCycles = () => setShowLifeCycles(false);
+  const sections = [
+    { title: 'Bitcoin', path: "/bitcoin" },
+    { title: 'Lifecycles (update)', path: "/lifecyclesupdate" },
+    { title: 'Fetch', path: "/fetch" },
+    { title: 'Lifecycles', path: "/lifecycles" },
+    { title: 'Componentes', path: "/components" },
+    { title: 'Formularios', path: "/formularios" },
+    { title: 'Eventos', path: "/eventos" },
+    { title: 'Autos', path: "/autos" },
+    { title: 'Listas', path: "/listas" },
+    { title: 'Condicionales', path: "/condicional" },
+    { title: 'Contador', path: "/contador" },
+  ]
+
   return (
     <div className="container-sm pt-5 pb-5">
       <h1>Ejemplos con React <span className="badge bg-secondary">v0.2.0</span></h1>
@@ -32,41 +40,53 @@ function App() {
           <nav>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Inicio</Link>
               </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/users">Users</Link>
-              </li>
+              {sections.map(({ title, path }) => <li key={path} >
+                <Link to={path}>{title}</Link>
+              </li>)}
             </ul>
           </nav>
           <Switch>
-            <Route path="/about">
-              <h1>About</h1>
+            <Route path="/bitcoin">
+              <BitcoinPage />
             </Route>
-            <Route path="/users">
-              <h1>Users</h1>
+            <Route path="/lifecyclesupdate">
+              <LifecyclesUpdate />
+            </Route>
+            <Route path="/fetch">
+              <FetchExample />
+            </Route>
+            <Route path="/lifecycles">
+              <LifeCycles />
+            </Route>
+            <Route path="/components">
+              <Components />
+            </Route>
+            <Route path="/formularios">
+              <Formularios />
+            </Route>
+            <Route path="/eventos">
+              <Eventos />
+            </Route>
+            <Route path="/autos">
+              <ListaAutos />
+            </Route>
+            <Route path="/listas">
+              <Lists />
+            </Route>
+            <Route path="/condicional">
+              <Conditional />
+            </Route>
+            <Route path="/contador">
+              <Contador />
             </Route>
             <Route path="/">
-              <h1>Home</h1>
+              <h2>Hola mundo</h2>
             </Route>
           </Switch>
         </div>
       </Router>
-      <BitcoinPage />
-      <LifecyclesUpdate />
-      <FetchExample />
-      {showLifeCycles && <LifeCycles />}
-      {showLifeCycles && <button className="btn btn-danger" onClick={() => hideLifeCycles()}>Eliminar</button>}
-      <Components />
-      <Formularios />
-      <Eventos />
-      <ListaAutos />
-      <Lists />
-      <Conditional />
-      <Contador />
     </div>
   );
 }
