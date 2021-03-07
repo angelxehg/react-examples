@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 
-class Contador extends Component {
+import Layout, { BackToHome } from '../components/layout';
+
+class ContadorPage extends Component {
 
   constructor() {
     super();
@@ -22,11 +24,12 @@ class Contador extends Component {
   }
 
   render() {
-    return <div className="mt-5">
+    return <Layout>
+      <BackToHome/>
       <h2>Contador</h2>
       <span>Cuenta: {this.state.cuenta}</span>
-    </div>
+    </Layout>
   }
 }
 
-export default Contador
+export default ContadorPage

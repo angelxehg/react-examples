@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types"
 
+import Layout, { BackToHome } from '../components/layout';
 import autos from "../data/autos";
 
 const Auto = ({ car }) => {
@@ -14,8 +15,9 @@ Auto.propTypes = {
   car: PropTypes.object,
 }
 
-const ListaAutos = () => {
-  return <div className="mt-5">
+const CarsPage = () => {
+  return <Layout>
+    <BackToHome/>
     <h2>Lista de autos</h2>
     <ul>
       {autos.map(a => <Auto
@@ -23,7 +25,7 @@ const ListaAutos = () => {
         car={a}
       />)}
     </ul>
-  </div>
+  </Layout>
 };
 
-export default ListaAutos;
+export default CarsPage;

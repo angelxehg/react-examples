@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types"
 
+import Layout, { BackToHome } from '../components/layout';
+
 const Box = ({ children }) => {
   return (
     <div style={{ border: '1px solid #09f', margin: 5, padding: 5 }}>
@@ -16,7 +18,7 @@ Box.propTypes = {
 const Article = ({ title, author, date, children }) => {
   return (
     <section className="mt-3">
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       <p><em>Escrito por {author}</em></p>
       <Box>{date}</Box>
       <article>
@@ -33,9 +35,10 @@ Article.propTypes = {
   children: PropTypes.node.isRequired
 }
 
-const Components = () => {
-  return <div className="mt-5">
-    <h2>Componentes</h2>
+const ComponentsPage = () => (
+  <Layout>
+    <BackToHome/>
+    <h1>Componentes</h1>
     <Article
       title="Nuevo artículo"
       author="Angel Hurtado"
@@ -50,7 +53,7 @@ const Components = () => {
     >
       <p>Este es el contenido de otro articulo</p>
     </Article>
-  </div>
-};
+  </Layout>
+)
 
-export default Components;
+export default ComponentsPage;

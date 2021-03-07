@@ -1,17 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Lists from './pages/lists';
-import ListaAutos from './pages/cars';
-import Eventos from './pages/events';
-import Contador from './pages/contador';
-import Formularios from './pages/forms';
-import Components from './pages/components';
+import ListsPage from './pages/Lists';
+import CarsPage from './pages/Cars';
+import EventsPage from './pages/Events';
+import ContadorPage from './pages/Contador';
+import FormsPage from './pages/Forms';
+import ComponentsPage from './pages/Components';
 import LifeCyclesPage from './pages/Lifecycles';
 import FetchPage from './pages/Fetch';
 import LifecyclesUpdatePage from './pages/LifecyclesUpdate';
 import BitcoinPage from './pages/Bitcoin';
-import Conditional from './pages/conditional'
+import ConditionalPage from './pages/Conditional'
 import HomePage from './pages/Home';
 
 import './App.css';
@@ -23,13 +23,13 @@ function App() {
     { title: 'Lifecycles (update)', path: "/lifecyclesupdate", component: <LifecyclesUpdatePage /> },
     { title: 'Fetch', path: "/fetch", component: <FetchPage /> },
     { title: 'Lifecycles', path: "/lifecycles", component: <LifeCyclesPage /> },
-    { title: 'Componentes', path: "/components", component: <Components /> },
-    { title: 'Formularios', path: "/formularios", component: <Formularios /> },
-    { title: 'Eventos', path: "/eventos", component: <Eventos /> },
-    { title: 'Autos', path: "/autos", component: <ListaAutos /> },
-    { title: 'Listas', path: "/listas", component: <Lists /> },
-    { title: 'Condicionales', path: "/condicional", component: <Conditional /> },
-    { title: 'Contador', path: "/contador", component: <Contador /> },
+    { title: 'Componentes', path: "/components", component: <ComponentsPage /> },
+    { title: 'Formularios', path: "/formularios", component: <FormsPage /> },
+    { title: 'Eventos', path: "/eventos", component: <EventsPage /> },
+    { title: 'Autos', path: "/autos", component: <CarsPage /> },
+    { title: 'Listas', path: "/listas", component: <ListsPage /> },
+    { title: 'Condicionales', path: "/condicional", component: <ConditionalPage /> },
+    { title: 'Contador', path: "/contador", component: <ContadorPage /> },
   ]
 
   return (

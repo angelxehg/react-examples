@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import Layout, { BackToHome } from '../components/layout';
+
 const LoginButton = () => {
   return <button>Iniciar sesión</button>;
 }
@@ -11,13 +13,14 @@ const LogoutButton = () => {
   </div>;
 }
 
-const Conditional = () => {
+const ConditionalPage = () => {
   const [isLoggedIn] = useState(false);
 
-  return (<div className="mt-5">
+  return (<Layout>
+    <BackToHome/>
     <h2>Condicional Rendering</h2>
     {isLoggedIn ? <LogoutButton/> : <LoginButton/> }
-  </div>);
+  </Layout>);
 }
 
-export default Conditional;
+export default ConditionalPage;
