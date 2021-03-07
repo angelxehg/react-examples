@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-class FetchExample extends Component {
+
+import Layout, { BackToHome } from '../components/layout';
+
+class FetchPage extends Component {
 
   state = { bpi: {} }
 
@@ -15,13 +18,14 @@ class FetchExample extends Component {
   render() {
     const { bpi } = this.state;
     return (
-      <div className="mt-5">
+      <Layout>
+        <BackToHome/>
         <h2>Precios del Bitcoin</h2>
         <p>Ejemplo de Fetch</p>
         {Object.keys(bpi).map(key => <p key={key} >1 BTC = {bpi[key].rate} {key}</p>)}
-      </div>
+      </Layout>
     )
   }
 }
 
-export default FetchExample
+export default FetchPage

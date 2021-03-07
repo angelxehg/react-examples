@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
-class LifeCycles extends Component {
+import Layout, { BackToHome } from '../components/layout';
+
+class LifecyclesPage extends Component {
 
   constructor(props) {
     super(props);
@@ -31,7 +33,8 @@ class LifeCycles extends Component {
 
   render() {
     return (
-      <div className="mt-5">
+      <Layout>
+        <BackToHome />
         <h2>Ciclos de vida</h2>
         <p>{this.state.message}</p>
         <p>Y: {this.state.sY} X: {this.state.sX}</p>
@@ -40,9 +43,9 @@ class LifeCycles extends Component {
           onClick={this.handleClick}>
           Clic
         </button>
-      </div>
+      </Layout>
     )
   }
 }
 
-export default LifeCycles
+export default LifecyclesPage

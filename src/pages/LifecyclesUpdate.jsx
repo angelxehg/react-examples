@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Layout, { BackToHome } from '../components/layout'
 
 const animalImages = {
   cat: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Y2F0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
@@ -65,16 +66,17 @@ AnimalImage.defaultProps = {
   defaultAnimal: 'cat'
 }
 
-class LifecyclesUpdate extends Component {
+class LifecyclesUpdatePage extends Component {
 
   render() {
     return (
-      <div className="mt-5">
+      <Layout>
+        <BackToHome/>
         <h2>Ciclos de vida (Actualización)</h2>
         <AnimalImage defaultAnimal='cat' />
-      </div>
+      </Layout>
     )
   }
 }
 
-export default LifecyclesUpdate
+export default LifecyclesUpdatePage

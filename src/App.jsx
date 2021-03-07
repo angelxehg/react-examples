@@ -7,9 +7,9 @@ import Eventos from './pages/events';
 import Contador from './pages/contador';
 import Formularios from './pages/forms';
 import Components from './pages/components';
-import LifeCycles from './pages/lifecycles';
-import FetchExample from './pages/fetch';
-import LifecyclesUpdate from './pages/lifecyclesupdate';
+import LifeCyclesPage from './pages/Lifecycles';
+import FetchPage from './pages/Fetch';
+import LifecyclesUpdatePage from './pages/LifecyclesUpdate';
 import BitcoinPage from './pages/Bitcoin';
 import Conditional from './pages/conditional'
 import HomePage from './pages/Home';
@@ -20,9 +20,9 @@ function App() {
 
   const sections = [
     { title: 'Bitcoin', path: "/bitcoin", component: <BitcoinPage /> },
-    { title: 'Lifecycles (update)', path: "/lifecyclesupdate", component: <LifecyclesUpdate /> },
-    { title: 'Fetch', path: "/fetch", component: <FetchExample /> },
-    { title: 'Lifecycles', path: "/lifecycles", component: <LifeCycles /> },
+    { title: 'Lifecycles (update)', path: "/lifecyclesupdate", component: <LifecyclesUpdatePage /> },
+    { title: 'Fetch', path: "/fetch", component: <FetchPage /> },
+    { title: 'Lifecycles', path: "/lifecycles", component: <LifeCyclesPage /> },
     { title: 'Componentes', path: "/components", component: <Components /> },
     { title: 'Formularios', path: "/formularios", component: <Formularios /> },
     { title: 'Eventos', path: "/eventos", component: <Eventos /> },
