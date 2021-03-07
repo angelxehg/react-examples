@@ -33,20 +33,16 @@ function App() {
   ]
 
   return (
-    <div className="container-sm pt-5 pb-5">
-      <h1>Ejemplos con React <span className="badge bg-secondary">v0.2.0</span></h1>
-      <p>Ejercicios de React del curso <b>Aprender React JS</b> de <a href="https://twitter.com/midudev">@midudev</a> </p>
-      <Router>
-        <Switch>
-          {sections.map(({ component, path }) => <Route key={path} path={path} >
-            {component}
-          </Route>)}
-          <Route path="/">
-            <HomePage links={sections}/>
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+    <Router>
+      <Switch>
+        {sections.map(({ component, path }) => <Route key={path} path={path} >
+          {component}
+        </Route>)}
+        <Route path="/">
+          <HomePage links={sections} />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
