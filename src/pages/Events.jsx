@@ -19,7 +19,7 @@ const EventsPage = () => {
 
   return <Layout>
     <BackToHome/>
-    <h2>Eventos</h2>
+    <h1>Eventos</h1>
     <button className="btn btn-primary" onClick={handleClick}>
       Dame clic
     </button>

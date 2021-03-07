@@ -36,7 +36,7 @@ class LifecyclesPage extends Component {
     return (
       <Layout>
         <BackToHome />
-        <h2>Ciclos de vida</h2>
+        <h1>Ciclos de vida</h1>
         <p>{this.state.message}</p>
         <p>Y: {this.state.sY} X: {this.state.sX}</p>
         <button

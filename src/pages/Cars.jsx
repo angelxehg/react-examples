@@ -18,7 +18,7 @@ Auto.propTypes = {
 const CarsPage = () => {
   return <Layout>
     <BackToHome/>
-    <h2>Lista de autos</h2>
+    <h1>Lista de autos</h1>
     <ul>
       {autos.map(a => <Auto
         key={a.id}

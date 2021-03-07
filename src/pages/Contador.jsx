@@ -26,7 +26,7 @@ class ContadorPage extends Component {
   render() {
     return <Layout>
       <BackToHome/>
-      <h2>Contador</h2>
+      <h1>Contador</h1>
       <span>Cuenta: {this.state.cuenta}</span>
     </Layout>
   }

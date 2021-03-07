@@ -72,7 +72,7 @@ class LifecyclesUpdatePage extends Component {
     return (
       <Layout>
         <BackToHome/>
-        <h2>Ciclos de vida (Actualización)</h2>
+        <h1>Ciclos de vida (Actualización)</h1>
         <AnimalImage defaultAnimal='cat' />
       </Layout>
     )

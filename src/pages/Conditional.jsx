@@ -18,7 +18,7 @@ const ConditionalPage = () => {
 
   return (<Layout>
     <BackToHome/>
-    <h2>Condicional Rendering</h2>
+    <h1>Condicional Rendering</h1>
     {isLoggedIn ? <LogoutButton/> : <LoginButton/> }
   </Layout>);
 }

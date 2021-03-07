@@ -20,7 +20,7 @@ class FetchPage extends Component {
     return (
       <Layout>
         <BackToHome/>
-        <h2>Precios del Bitcoin</h2>
+        <h1>Precios del Bitcoin</h1>
         <p>Ejemplo de Fetch</p>
         {Object.keys(bpi).map(key => <p key={key} >1 BTC = {bpi[key].rate} {key}</p>)}
       </Layout>
