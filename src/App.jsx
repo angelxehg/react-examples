@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Lists from './sections/lists';
 import ListaAutos from './sections/cars';
@@ -14,6 +14,7 @@ import BitcoinPage from './sections/bitcoin';
 import Conditional from './sections/conditional'
 
 import './App.css';
+import HomePage from './pages/Home';
 
 function App() {
 
@@ -36,26 +37,14 @@ function App() {
       <h1>Ejemplos con React <span className="badge bg-secondary">v0.2.0</span></h1>
       <p>Ejercicios de React del curso <b>Aprender React JS</b> de <a href="https://twitter.com/midudev">@midudev</a> </p>
       <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Inicio</Link>
-              </li>
-              {sections.map(({ title, path }) => <li key={path} >
-                <Link to={path}>{title}</Link>
-              </li>)}
-            </ul>
-          </nav>
-          <Switch>
-            {sections.map(({ component, path }) => <Route key={path} path={path} >
-              {component}
-            </Route>)}
-            <Route path="/">
-              <h2>Hola mundo</h2>
-            </Route>
-          </Switch>
-        </div>
+        <Switch>
+          {sections.map(({ component, path }) => <Route key={path} path={path} >
+            {component}
+          </Route>)}
+          <Route path="/">
+            <HomePage links={sections}/>
+          </Route>
+        </Switch>
       </Router>
     </div>
   );
