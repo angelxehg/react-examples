@@ -1,20 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Lists from './sections/lists';
-import ListaAutos from './sections/cars';
-import Eventos from './sections/events';
-import Contador from './sections/contador';
-import Formularios from './sections/forms';
-import Components from './sections/components';
-import LifeCycles from './sections/lifecycles';
-import FetchExample from './sections/fetch';
-import LifecyclesUpdate from './sections/lifecyclesupdate';
+import Lists from './pages/lists';
+import ListaAutos from './pages/cars';
+import Eventos from './pages/events';
+import Contador from './pages/contador';
+import Formularios from './pages/forms';
+import Components from './pages/components';
+import LifeCycles from './pages/lifecycles';
+import FetchExample from './pages/fetch';
+import LifecyclesUpdate from './pages/lifecyclesupdate';
 import BitcoinPage from './pages/Bitcoin';
-import Conditional from './sections/conditional'
+import Conditional from './pages/conditional'
+import HomePage from './pages/Home';
 
 import './App.css';
-import HomePage from './pages/Home';
 
 function App() {
 
