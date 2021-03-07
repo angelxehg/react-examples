@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import Layout, { BackToHome } from '../components/layout';
+
 const BTCTable = ({ children }) => (
   <table className="table table-sm">
     <thead>
@@ -54,8 +56,9 @@ class BitcoinPage extends Component {
   render() {
     const { bpis } = this.state;
     return (
-      <div className="mt-5">
-        <h2>BTC (Container-Content)</h2>
+      <Layout>
+        <BackToHome/>
+        <h1>BTC (Container-Content)</h1>
         <p>1 BTC equivale a...</p>
         <BTCTable>
           {bpis.map(({ prefix, currency, value }) => <CurrencyRow
@@ -65,7 +68,7 @@ class BitcoinPage extends Component {
             value={value}
           />)}
         </BTCTable>
-      </div>
+      </Layout>
     )
   }
 }

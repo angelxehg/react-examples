@@ -10,7 +10,7 @@ import Components from './sections/components';
 import LifeCycles from './sections/lifecycles';
 import FetchExample from './sections/fetch';
 import LifecyclesUpdate from './sections/lifecyclesupdate';
-import BitcoinPage from './sections/bitcoin';
+import BitcoinPage from './pages/Bitcoin';
 import Conditional from './sections/conditional'
 
 import './App.css';
