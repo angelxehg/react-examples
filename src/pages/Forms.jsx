@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-const Formularios = () => {
+import Layout, { BackToHome } from '../components/layout';
+
+const FormsPage = () => {
 
   const [inputName, changeName] = useState('');
   const [inputTwitter, changeTwitter] = useState('@');
@@ -11,8 +13,9 @@ const Formularios = () => {
     console.log({ inputName, inputTwitter, inputTerms });
   }
 
-  return <div className="mt-5">
-    <h2>Formularios</h2>
+  return <Layout>
+    <BackToHome />
+    <h1>Formularios</h1>
     <form onSubmit={handleSubmit}>
       <div className="form-group">
         <label htmlFor="inputName">Nombre</label>
@@ -29,7 +32,7 @@ const Formularios = () => {
       </div>
       <button type="submit" className="btn btn-primary">Enviar</button>
     </form>
-  </div>;
+  </Layout>
 }
 
-export default Formularios
+export default FormsPage

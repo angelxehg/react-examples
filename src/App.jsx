@@ -1,35 +1,48 @@
-import React, { useState } from 'react';
-import Conditional from './sections/conditional';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import ListsPage from './pages/Lists';
+import CarsPage from './pages/Cars';
+import EventsPage from './pages/Events';
+import ContadorPage from './pages/Contador';
+import FormsPage from './pages/Forms';
+import ComponentsPage from './pages/Components';
+import LifeCyclesPage from './pages/Lifecycles';
+import FetchPage from './pages/Fetch';
+import LifecyclesUpdatePage from './pages/LifecyclesUpdate';
+import BitcoinPage from './pages/Bitcoin';
+import ConditionalPage from './pages/Conditional'
+import HomePage from './pages/Home';
 
 import './App.css';
-import Lists from './sections/lists';
-import ListaAutos from './sections/cars';
-import Eventos from './sections/events';
-import Contador from './sections/contador';
-import Formularios from './sections/forms';
-import Components from './sections/components';
-import LifeCycles from './sections/lifecycles';
-import FetchExample from './sections/fetch';
 
 function App() {
-  const [showLifeCycles, setShowLifeCycles] = useState(true);
 
-  const hideLifeCycles = () => setShowLifeCycles(false);
+  const sections = [
+    { title: 'Bitcoin', path: "/bitcoin", component: <BitcoinPage /> },
+    { title: 'Lifecycles (update)', path: "/lifecyclesupdate", component: <LifecyclesUpdatePage /> },
+    { title: 'Fetch', path: "/fetch", component: <FetchPage /> },
+    { title: 'Lifecycles', path: "/lifecycles", component: <LifeCyclesPage /> },
+    { title: 'Componentes', path: "/components", component: <ComponentsPage /> },
+    { title: 'Formularios', path: "/formularios", component: <FormsPage /> },
+    { title: 'Eventos', path: "/eventos", component: <EventsPage /> },
+    { title: 'Autos', path: "/autos", component: <CarsPage /> },
+    { title: 'Listas', path: "/listas", component: <ListsPage /> },
+    { title: 'Condicionales', path: "/condicional", component: <ConditionalPage /> },
+    { title: 'Contador', path: "/contador", component: <ContadorPage /> },
+  ]
+
   return (
-    <div className="container-sm pt-5 pb-5">
-      <h1>Udemy Curso React <span className="badge bg-secondary">v0.1.4</span></h1>
-      <p>Ejercicios de React del curso <b>Aprender React JS</b> de <a href="https://twitter.com/midudev">@midudev</a> </p>
-      <FetchExample/>
-      {showLifeCycles && <LifeCycles />}
-      {showLifeCycles && <button className="btn btn-danger" onClick={() => hideLifeCycles()}>Eliminar</button>}
-      <Components />
-      <Formularios />
-      <Eventos />
-      <ListaAutos />
-      <Lists />
-      <Conditional />
-      <Contador />
-    </div>
+    <Router>
+      <Switch>
+        {sections.map(({ component, path }) => <Route key={path} path={path} >
+          {component}
+        </Route>)}
+        <Route path="/">
+          <HomePage links={sections} />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

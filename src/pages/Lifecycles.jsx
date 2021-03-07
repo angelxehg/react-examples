@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
-class LifeCycles extends Component {
+import Layout, { BackToHome } from '../components/layout';
+import LoremIpsum from '../components/lorem';
+
+class LifecyclesPage extends Component {
 
   constructor(props) {
     super(props);
@@ -30,10 +33,10 @@ class LifeCycles extends Component {
   }
 
   render() {
-    console.log('Render');
     return (
-      <div className="mt-5">
-        <h2>Ciclos de vida</h2>
+      <Layout>
+        <BackToHome />
+        <h1>Ciclos de vida</h1>
         <p>{this.state.message}</p>
         <p>Y: {this.state.sY} X: {this.state.sX}</p>
         <button
@@ -41,9 +44,10 @@ class LifeCycles extends Component {
           onClick={this.handleClick}>
           Clic
         </button>
-      </div>
+        <LoremIpsum/>
+      </Layout>
     )
   }
 }
 
-export default LifeCycles
+export default LifecyclesPage
