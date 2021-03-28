@@ -25,11 +25,3 @@ Use la siguiente configuración para desplegar en Github PAges
 - Compilar para producción: `npm run build`
 
 - Desplegar en GitHub pages: `npm run deploy`
-
-## Despliegue en Netlify
-
-Use la siguiente configuración para desplegar en Netlify
-
-- Build command: `react-scripts build`
-
-- Publish directory: `build/`
