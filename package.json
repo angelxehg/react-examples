@@ -2,7 +2,7 @@
   "name": "react-examples",
   "description": "Ejemplos de React",
   "version": "0.3.0",
-  "homepage": "https://angelxehg.com/",
+  "homepage": "http://angelxehg.github.io/react-examples",
   "author": {
     "name": "Angel Hurtado",
     "email": "contact@angelxehg.com",
@@ -22,7 +22,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -58,6 +59,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.21.0",
     "eslint-plugin-react": "^7.22.0",
+    "gh-pages": "^3.1.0",
     "prop-types": "^15.7.2"
   }
 }

@@ -33,7 +33,7 @@ function App() {
   ]
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Switch>
         {sections.map(({ component, path }) => <Route key={path} path={path} >
           {component}

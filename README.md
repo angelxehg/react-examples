@@ -18,6 +18,14 @@ Utilice estos comandos para mantener la calidad del código
 
 - Code linting: `npm run lint`
 
+## Despliegue en Github Pages
+
+Use la siguiente configuración para desplegar en Github PAges
+
+- Compilar para producción: `npm run build`
+
+- Desplegar en GitHub pages: `npm run deploy`
+
 ## Despliegue en Netlify
 
 Use la siguiente configuración para desplegar en Netlify
