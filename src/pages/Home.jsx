@@ -6,7 +6,7 @@ import Layout from '../components/layout';
 
 const HomePage = ({ links }) => (
   <Layout>
-    <h1>Ejemplos con React <span className="badge bg-secondary">v0.3.0</span></h1>
+    <h1>Ejemplos con React <span className="badge bg-secondary">v0.3.1</span></h1>
     <p>Ejercicios de React del curso <b>Aprender React JS</b> de <a href="https://twitter.com/midudev">@midudev</a> </p>
     <nav>
       <ul>
